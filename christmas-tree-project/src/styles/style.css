@@ -1,0 +1,78 @@
+body {
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.tree {
+    position: relative;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+}
+
+.tree:before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -25px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid green;
+}
+
+.tree:after {
+    content: '';
+    position: absolute;
+    bottom: 80%;
+    left: 50%;
+    margin-left: -20px;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 80px solid green;
+}
+
+.tree .trunk {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    width: 40px;
+    height: 30px;
+    background-color: saddlebrown;
+    margin-left: -20px;
+}
+
+.decorations {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.decoration {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 5px;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.white {
+    background-color: white;
+}

@@ -1,0 +1,14 @@
+body{
+    font-family:Arial, sans-serif;
+    background-color:rgb(84, 207, 203);
+}
+h1{
+    color: rgb(14, 13, 13);
+    text-align: center;
+}
+ul{
+    list-style-type: disc;
+}
+.highlight{
+background-color: thistle;
+}
