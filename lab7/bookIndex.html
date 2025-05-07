@@ -12,7 +12,7 @@
     <ul id="bookList"></ul>
 
     <script>
-        fetch('http://localhost/can302/lab7/bookAPI.php')
+        fetch('http://localhost/lab7/bookAPI.php')
           .then(response => response.json())
           .then(data => {
                 const bookList = document.getElementById('bookList');

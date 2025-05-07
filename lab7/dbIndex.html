@@ -18,7 +18,7 @@
 
     <script>
         function fetchBooksFromDB() {
-            fetch('http://localhost/can302/lab7/dbAPI.php')
+            fetch('dbAPI.php')
               .then(response => response.json())
               .then(data => {
                     const bookList = document.getElementById('bookListDB');
@@ -36,7 +36,8 @@
             const title = document.getElementById('titleInput').value;
             const author = document.getElementById('authorInputDB').value;
             const data = { title: title, author: author };
-            fetch('http://localhost/can302/lab7/dbAPI.php', {
+            console.log(data);
+            fetch('dbAPI.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

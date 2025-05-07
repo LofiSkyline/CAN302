@@ -21,7 +21,7 @@ header('Content-Type: application/json');
 
 if (isset($_GET['author'])) {
     $author = $_GET['author'];
-    $filtered_books = array_filter($books, function ($book) use ($author) {
+    $filtered_books = array_filter(array: $books, callback: function ($book) use ($author): bool {
         return strtolower($book['author']) === strtolower($author);
     });
     echo json_encode(array_values($filtered_books));

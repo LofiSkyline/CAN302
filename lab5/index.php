@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-x
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
     <title>Online Shopping</title>
 </head>
 
@@ -53,19 +53,20 @@ x
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="0" class="active" aria-current="true"></button>
                         <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#carouselDemo" data-bs-slide-to="3"></button>
                     </div>
                     <div class="carousel-inner">
-                        <?php 
-                            $get_slides = "SELECT * FROM products LIMIT 1";
-                            $run_slides = mysqli_query($conn, $get_slides);
-                            $row_slides = mysqli_fetch_array($run_slides);
-                            echo '<div class="carousel-item active"><img src="'.$row_slides['image'].'" class="d-block w-100"></div>';
+                    <?php 
+                        $get_slides = "SELECT * FROM products LIMIT 4";
+                        $run_slides = mysqli_query($conn, $get_slides);
+                        $active = true;
 
-                            $get_slides = "SELECT * FROM products LIMIT 1 OFFSET 1";
-                            $run_slides = mysqli_query($conn, $get_slides);
-                            while($row_slides = mysqli_fetch_array($run_slides)){
-                                echo '<div class="carousel-item"><img src="'.$row_slides['image'].'" class="d-block w-100"></div>';
-                            }
+                        while ($row_slides = mysqli_fetch_array($run_slides)) {
+                            $class = $active ? "carousel-item active" : "carousel-item";
+                            echo '<div class="'.$class.'"><img src="'.$row_slides['image'].'" class="d-block w-100"></div>';
+                            $active = false; // 只有第一张是 active
+                        }
                         ?>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselDemo" data-bs-slide="prev">
